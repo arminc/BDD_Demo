@@ -1,0 +1,26 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<link href="concordion.css" rel="stylesheet" type="text/css" />
+<body>
+
+<h1>Register hours as a user</h1>
+
+<p>
+    Resistration of hours should happen in Connect
+</p>
+
+<div class="example">
+
+    <h3>Register hours and verify they are saved</h3>
+
+    <p>
+        Given that <b concordion:set="#user">armin</b> has no hours registered
+        <span concordion:execute="userSelected(#user)" />
+        and he adds <b concordion:set="#hours">10</b> hours to his week
+        <span concordion:execute="addHoursToUser(#hours)" />
+        then connect should show <b concordion:assertEquals="verifyHours()">10</b> hours registered
+    </p>
+
+</div>
+
+</body>
+</html>
